@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>★☆ 2003's Cyber Space ☆★</title>
+  <style>
+    /* 1. 背景：真っ黒な背景に星が流れる装飾 */
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'MS PGothic', 'ＭＳ Ｐゴシック', sans-serif;
+      margin: 0;
+      padding: 0;
+      /* 星空の表現 */
+      background-image:
+        radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 50px 160px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 130px 80px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 160px 120px, #ffffff, rgba(0, 0, 0, 0));
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      animation: starMove 10s linear infinite;
+    }
+
+    @keyframes starMove {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: -200px 200px;
+      }
+    }
+
+    /* 2. レイアウト：2カラム構成 */
+    .container {
+      display: flex;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .menu {
+      width: 20%;
+      border-right: 3px double #00ff00;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .main {
+      width: 80%;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* 3. タイトル：虹色に光り輝くフォント */
+    .title {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      animation: rainbow 5s linear infinite;
+    }
+
+    @keyframes rainbow {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    /* 4. カウンター：レトロなデジタル数字 */
+    .counter-box {
+      margin: 20px auto;
+      border: 2px solid #ff00ff;
+      padding: 10px;
+      display: inline-block;
+    }
+
+    .counter {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 24px;
+      background-color: black;
+      color: #ff0000;
+      padding: 5px 10px;
+      border: inset 3px gray;
+      letter-spacing: 5px;
+      text-shadow: 0 0 5px red;
+    }
+
+    /* その他のレトロ装飾 */
+    .blink {
+      animation: blinker 1s linear infinite;
+      color: yellow;
+      font-weight: bold;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px dashed #00ffff;
+    }
+
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ff00ff;
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    .under-construction {
+      border: 2px dashed yellow;
+      background-color: #333;
+      color: yellow;
+      padding: 10px;
+      display: inline-block;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* MIDI再生の注意書き用 */
+    .bgm-notice {
+      font-size: 12px;
+      color: #ff99ff;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- 左カラム：メニュー (20%) -->
+    <div class="menu">
+      <h3 style="color: #00ff00;">■ MENU ■</h3>
+      <ul>
+        <li><a href="#">Top</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Diary</a></li>
+        <li><a href="#">BBS (掲示板)</a></li>
+        <li><a href="#">Links</a></li>
+      </ul>
+      <br><br>
+      <div style="font-size: 12px; text-align: center; color: #ff99ff;">
+        Since: 2003.04.01<br>
+        Last Update: 2003.11.15
+      </div>
+
+      <div class="bgm-notice">
+        ※画面をクリックすると<br>MIDI風BGMが流れます♪
+      </div>
+    </div>
+
+    <!-- 右カラム：メインコンテンツ (80%) -->
+    <div class="main">
+      <h1 class="title">★☆ 2003's Cyber Space ☆★</h1>
+      <hr>
+
+      <!-- 5. Marqueeタグ -->
+      <marquee scrollamount="5" style="color: #00ffff; font-weight: bold; font-size: 18px;">
+        キリ番報告必須！　　相互リンク大歓迎！　　リンクフリーです！
+      </marquee>
+
+      <div class="counter-box">
+        あなたは <span class="counter">000103</span> 人目の訪問者です
+      </div>
+
+      <p class="blink">Welcome to my Homepage!!</p>
+
+      <p>
+        ようこそ！ここは管理人の趣味のページです。<br>
+        ゆっくりしていってね！
+      </p>
+
+      <div class="under-construction">
+        🚧 現在、一部のコンテンツは工事中です 🚧
+      </div>
+
+      <div class="footer">
+        推奨環境: Internet Explorer 6.0 / 解像度 800x600 以上<br>
+        当サイトの画像・文章の無断転載を禁じます。
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScriptの要件: アラート
+    window.onload = function () {
+      alert("Welcome to my website!");
+    };
+
+    // Web Audio APIによるピコピコBGM (MIDI風)
+    let audioCtx = null;
+    let isPlaying = false;
+
+    function playRetroBgm() {
+      if (isPlaying) return;
+
+      // AudioContextの初期化
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      isPlaying = true;
+
+      // ドラクエ風/チップチューン風のシンプルなアルペジオ
+      const notes = [
+        440.00, // A4
+        523.25, // C5
+        659.25, // E5
+        523.25, // C5
+        440.00, // A4
+        523.25, // C5
+        659.25, // E5
+        783.99  // G5
+      ];
+
+      let noteIndex = 0;
+      let nextNoteTime = audioCtx.currentTime + 0.1;
+
+      function scheduleNote() {
+        // 少し先まで音符をスケジュールする
+        while (nextNoteTime < audioCtx.currentTime + 0.1) {
+          playNote(notes[noteIndex], nextNoteTime);
+          nextNoteTime += 0.2; // テンポ (0.2秒間隔)
+          noteIndex = (noteIndex + 1) % notes.length;
+        }
+        if (isPlaying) {
+          requestAnimationFrame(scheduleNote);
+        }
+      }
+
+      function playNote(frequency, time) {
+        const osc = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+
+        osc.type = 'square'; // 矩形波でピコピコ感（チップチューン）を出す
+        osc.frequency.value = frequency;
+
+        // 音のエンベロープ（減衰）
+        gainNode.gain.setValueAtTime(0.05, time); // 音量は控えめ
+        gainNode.gain.exponentialRampToValueAtTime(0.001, time + 0.15); // プツッと切れるような音に
+
+        osc.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+
+        osc.start(time);
+        osc.stop(time + 0.15);
+      }
+
+      scheduleNote();
+    }
+
+    // 最近のブラウザはユーザーインタラクションなしで音を鳴らせないため、
+    // 画面のどこかをクリックした瞬間にBGMが再生されるように設定します。
+    document.body.addEventListener('click', function () {
+      playRetroBgm();
+    }, { once: true });
+  </script>
+
+</body>
+
+</html>
